@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Форма обратной связи</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Форма обратной связи</h1>
+      <p>Нажмите на кнопку ниже, чтобы открыть форму обратной связи</p>
+      <button class="btn-open" id="openModal">Открыть форму</button>
+    </div>
+
+    <div class="modal-overlay" id="modalOverlay">
+      <div class="modal-content">
+        <button class="btn-close" id="closeModal">&times;</button>
+        <div class="modal-header">
+          <h2>Форма обратной связи</h2>
+        </div>
+
+        <div class="message" id="message"></div>
+
+        <form id="feedbackForm">
+          <div class="form-group">
+            <label for="fullName">ФИО *</label>
+            <input type="text" id="fullName" name="fullName" required />
+            <div class="error-text" id="fullNameError">
+              Поле ФИО обязательно для заполнения
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email *</label>
+            <input type="email" id="email" name="email" required />
+            <div class="error-text" id="emailError">
+              Введите корректный email адрес
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Телефон</label>
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              placeholder="+7 (999) 999-99-99"
+            />
+            <div class="error-text" id="phoneError">
+              Введите корректный номер телефона
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="organization">Организация</label>
+            <input type="text" id="organization" name="organization" />
+          </div>
+
+          <div class="form-group">
+            <label for="messageText">Сообщение *</label>
+            <textarea id="messageText" name="messageText" required></textarea>
+            <div class="error-text" id="messageTextError">
+              Поле сообщения обязательно для заполнения
+            </div>
+          </div>
+
+          <div class="checkbox-group">
+            <input
+              type="checkbox"
+              id="privacyPolicy"
+              name="privacyPolicy"
+              required
+            />
+            <label for="privacyPolicy"
+              >Я согласен с политикой обработки персональных данных *</label
+            >
+          </div>
+          <div class="error-text" id="privacyPolicyError">
+            Необходимо согласие с политикой обработки данных
+          </div>
+
+          <button type="submit" class="btn-submit" id="submitBtn">
+            Отправить
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
